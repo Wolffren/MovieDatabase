@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieDatabase.Web", "MovieDatabase\MovieDatabase.Web.csproj", "{6739637B-DFC9-4E32-98CC-FD021E8857FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieDatabase.Web", "MovieDatabase.Web\MovieDatabase.Web.csproj", "{6739637B-DFC9-4E32-98CC-FD021E8857FD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieDatabase.Data", "MovieDatabase.Data\MovieDatabase.Data.csproj", "{22280C81-5BC6-41B9-A0C2-B78A291354A1}"
 EndProject
