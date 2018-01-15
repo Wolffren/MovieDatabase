@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieDatabase.Entities
+﻿namespace MovieDatabase.Entities
 {
+    using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
+
 
     public class Movie : BaseEntity
     {
@@ -13,10 +12,22 @@ namespace MovieDatabase.Entities
         [Column("Trailer")]
         public string TrailerUrl { get; set; }
 
-        [Column("Year")]
-        public string YearCreated { get; set; }
+        [Column("Cover")]
+        public string CoverUrl { get; set; }
 
+        public int Length { get; set; }
+
+        public string Description { get; set; }
+
+        public int Budget { get; set; }
+
+        public DateTime ReleaseDate { get; set; }
+
+        public Genre Genre { get; set; }
+
+        public Rating Rating { get; set; }
 
         public List<MovieActor> MovieActors { get; set; }
+        
     }
 }

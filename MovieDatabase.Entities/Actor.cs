@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace MovieDatabase.Entities
+﻿namespace MovieDatabase.Entities
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
     public class Actor : BaseEntity
     {
         [Required]
@@ -28,6 +27,7 @@ namespace MovieDatabase.Entities
 
         [Required]
         public string City { get; set; }
+
 
         public string FullName => $"{FirstName} {MiddleName} {LastName}";
 
