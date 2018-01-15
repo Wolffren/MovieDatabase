@@ -11,9 +11,10 @@ using System;
 namespace MovieDatabase.Data.Migrations
 {
     [DbContext(typeof(MovieDatabaseContext))]
-    partial class MovieDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20180115135909_Review")]
+    partial class Review
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,15 +165,9 @@ namespace MovieDatabase.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
-
-                    b.Property<int>("MovieId");
-
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId");
 
                     b.ToTable("Genres");
                 });
@@ -189,7 +184,11 @@ namespace MovieDatabase.Data.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<int?>("GenreId");
+
                     b.Property<int>("Length");
+
+                    b.Property<int?>("RatingId");
 
                     b.Property<DateTime>("ReleaseDate");
 
@@ -199,6 +198,10 @@ namespace MovieDatabase.Data.Migrations
                         .HasColumnName("Trailer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GenreId");
+
+                    b.HasIndex("RatingId");
 
                     b.ToTable("Movies");
                 });
@@ -221,14 +224,9 @@ namespace MovieDatabase.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("MovieId");
-
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MovieId")
-                        .IsUnique();
 
                     b.ToTable("Ratings");
                 });
@@ -246,13 +244,11 @@ namespace MovieDatabase.Data.Migrations
 
                     b.Property<string>("UsedId");
 
-                    b.Property<string>("UserId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("MovieId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UsedId");
 
                     b.ToTable("Reviews");
                 });
@@ -353,12 +349,15 @@ namespace MovieDatabase.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("MovieDatabase.Entities.Genre", b =>
+            modelBuilder.Entity("MovieDatabase.Entities.Movie", b =>
                 {
-                    b.HasOne("MovieDatabase.Entities.Movie", "Movie")
-                        .WithMany("Genre")
-                        .HasForeignKey("MovieId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("MovieDatabase.Entities.Genre", "Genre")
+                        .WithMany()
+                        .HasForeignKey("GenreId");
+
+                    b.HasOne("MovieDatabase.Entities.Rating", "Rating")
+                        .WithMany()
+                        .HasForeignKey("RatingId");
                 });
 
             modelBuilder.Entity("MovieDatabase.Entities.MovieActor", b =>
@@ -374,14 +373,6 @@ namespace MovieDatabase.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("MovieDatabase.Entities.Rating", b =>
-                {
-                    b.HasOne("MovieDatabase.Entities.Movie", "Movie")
-                        .WithOne("Rating")
-                        .HasForeignKey("MovieDatabase.Entities.Rating", "MovieId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
             modelBuilder.Entity("MovieDatabase.Entities.Review", b =>
                 {
                     b.HasOne("MovieDatabase.Entities.Movie", "Movie")
@@ -391,7 +382,7 @@ namespace MovieDatabase.Data.Migrations
 
                     b.HasOne("MovieDatabase.Entities.User", "User")
                         .WithMany("Reviews")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UsedId");
                 });
 #pragma warning restore 612, 618
         }

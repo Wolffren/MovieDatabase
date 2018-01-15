@@ -23,11 +23,13 @@
 
         public DateTime ReleaseDate { get; set; }
 
-        public Genre Genre { get; set; }
-
         public Rating Rating { get; set; }
 
+        public List<Genre> Genre { get; set; }
+    
         public List<MovieActor> MovieActors { get; set; }
-        
+
+        public List<Review> Reviews { get; set; }
+
     }
 }
