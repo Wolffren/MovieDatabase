@@ -4,10 +4,14 @@ using System.Text;
 
 namespace MovieDatabase.Entities
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Review :BaseEntity
     {
+        [Required]
         public string Text { get; set; }
 
+        [Required]
         public double Mark { get; set; }
 
         public string UsedId { get; set; }

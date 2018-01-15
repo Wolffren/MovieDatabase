@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
 
@@ -15,12 +16,17 @@
         [Column("Cover")]
         public string CoverUrl { get; set; }
 
+        [Required]
         public int Length { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
+        [Required]
+        
         public int Budget { get; set; }
 
+        [Required]
         public DateTime ReleaseDate { get; set; }
 
         public Rating Rating { get; set; }

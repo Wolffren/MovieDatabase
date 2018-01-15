@@ -1,7 +1,10 @@
 ﻿namespace MovieDatabase.Entities
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class Rating : BaseEntity
     {
+        [Required]
         public string Name { get; set; }
 
         public int MovieId { get; set; }
