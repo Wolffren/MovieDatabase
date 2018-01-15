@@ -9,11 +9,12 @@
         [Required]
         public string FirstName { get; set; }
 
-        [Required]
         public string MiddleName { get; set; }
 
         [Required]
         public string LastName { get; set; }
+
+        public string Biography { get; set; }
 
         [Required]
         public DateTime BirthDate { get; set; }
@@ -21,17 +22,18 @@
         public DateTime? DeceasedDate { get; set; }
 
         [Required]
-        public string Country { get; set; }
+        public string Region { get; set; }
 
-        public string State { get; set; }
+        [Required]
+        public string Country { get; set; }
 
         [Required]
         public string City { get; set; }
 
 
-        public string FullName => $"{FirstName} {MiddleName} {LastName}";
+        public string FullName => $"{FirstName} {LastName}";
 
-        public string FullBirthPlace => string.IsNullOrEmpty(this.State) ? $"{City}, {Country}" : $"{City}, {State}, {Country}";
+        public string FullBirthPlace => string.IsNullOrEmpty(this.Region) ? $"{City}, {Country}" : $"{City}, {Country}, {Region}";
 
         public int Age => DateTime.Now.Year - BirthDate.Date.Year;
 

@@ -133,6 +133,8 @@ namespace MovieDatabase.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Biography");
+
                     b.Property<DateTime>("BirthDate");
 
                     b.Property<string>("City")
@@ -149,10 +151,10 @@ namespace MovieDatabase.Data.Migrations
                     b.Property<string>("LastName")
                         .IsRequired();
 
-                    b.Property<string>("MiddleName")
-                        .IsRequired();
+                    b.Property<string>("MiddleName");
 
-                    b.Property<string>("State");
+                    b.Property<string>("Region")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
