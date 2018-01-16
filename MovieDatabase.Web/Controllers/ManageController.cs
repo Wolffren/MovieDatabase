@@ -13,7 +13,7 @@
     using Microsoft.Extensions.Logging;
     using Entities;
     using Services.Interfaces;
-    using Services.ViewModels.Manage;
+    using Services.Models.Manage;
 
     [Authorize]
     [Route("[controller]/[action]")]

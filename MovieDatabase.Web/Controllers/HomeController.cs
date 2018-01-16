@@ -2,7 +2,7 @@
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using Services.ViewModels;
+    using Services.Models;
 
     public class HomeController : Controller
     {

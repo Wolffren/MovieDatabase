@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace MovieDatabase.Services.ViewModels.Account
+﻿namespace MovieDatabase.Services.Models.Account
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class LoginWith2faViewModel
     {
         [Required]

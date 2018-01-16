@@ -1,4 +1,4 @@
-﻿namespace MovieDatabase.Services.ViewModels.Manage
+﻿namespace MovieDatabase.Services.Models.Manage
 {
     public class RemoveLoginViewModel
     {
