@@ -1,5 +1,6 @@
 ﻿namespace MovieDatabase.Entities.Models.Manage
 {
+    using Microsoft.AspNetCore.Mvc.ModelBinding;
     using System.ComponentModel.DataAnnotations;
 
     public class EnableAuthenticatorViewModel
