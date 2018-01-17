@@ -4,6 +4,7 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Entities;
+    using Entities.Models.Account;
     using Extensions;
     using Microsoft.AspNetCore.Authentication;
     using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,6 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using Services.Interfaces;
-    using Services.Models.Account;
 
     [Authorize]
     [Route("[controller]/[action]")]

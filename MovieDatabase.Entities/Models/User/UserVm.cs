@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieDatabase.Services.Models.User
+﻿namespace MovieDatabase.Entities.Models.User
 {
     public class UserVm
     {

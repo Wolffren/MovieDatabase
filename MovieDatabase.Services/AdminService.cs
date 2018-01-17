@@ -1,40 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieDatabase.Services
+﻿namespace MovieDatabase.Services
 {
-    using System.Collections;
+    using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using AutoMapper;
     using Data;
     using Entities;
     using Interfaces;
     using Microsoft.AspNetCore.Identity;
-    using Models.User;
+    using Microsoft.EntityFrameworkCore;
 
     public class AdminService : IAdminService
     {
         private readonly MovieDatabaseContext _context;
-        private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
-        public AdminService(MovieDatabaseContext context, IMapper mapper, UserManager<User> userManger)
+
+        public AdminService(MovieDatabaseContext context, UserManager<User> userManger)
         {
             _context = context;
-            _mapper = mapper;
             _userManager = userManger;
         }
 
-        public IEnumerable<UserVm> GetAllUsers()
+        public async Task<IEnumerable<User>> GetAllUsersAsync()
         {
-            var users = new List<User>();
-            foreach (var user in this._userManager.Users)
-            {
-                users.Add(user);
-            }
+            return await this._userManager.Users.ToListAsync();
+        }
 
-            var result = this._mapper.Map<IEnumerable<UserVm>>(users);
-            return result;
+        public async Task<IEnumerable<Movie>> GetAllMoviesAsync()
+        {
+            return await this._context.Movies.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Actor>> GetAllActorsAsync()
+        {
+            return await this._context.Actors.ToListAsync();
         }
     }
 }

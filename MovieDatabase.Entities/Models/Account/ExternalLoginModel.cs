@@ -1,8 +1,8 @@
-﻿namespace MovieDatabase.Services.Models.Account
+namespace MovieDatabase.Entities.Models.Account
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class ForgotPasswordViewModel
+    public class ExternalLoginViewModel
     {
         [Required]
         [EmailAddress]

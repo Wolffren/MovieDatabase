@@ -1,8 +1,8 @@
 ﻿namespace MovieDatabase.Web.Controllers
 {
     using System.Diagnostics;
+    using Entities.Models;
     using Microsoft.AspNetCore.Mvc;
-    using Services.Models;
 
     public class HomeController : Controller
     {
@@ -11,23 +11,10 @@
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
         public IActionResult Error()
         {
             return View(new ErrorModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

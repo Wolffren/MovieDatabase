@@ -12,8 +12,8 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using Entities;
+    using Entities.Models.Manage;
     using Services.Interfaces;
-    using Services.Models.Manage;
 
     [Authorize]
     [Route("[controller]/[action]")]

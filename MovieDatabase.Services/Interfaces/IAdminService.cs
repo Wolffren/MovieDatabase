@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MovieDatabase.Services.Interfaces
+﻿namespace MovieDatabase.Services.Interfaces
 {
+    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Models.User;
+    using Entities;
 
     public interface IAdminService
     {
-        IEnumerable<UserVm> GetAllUsers();
+        Task<IEnumerable<User>> GetAllUsersAsync();
+
+        Task<IEnumerable<Movie>> GetAllMoviesAsync();
+
+        Task<IEnumerable<Actor>> GetAllActorsAsync();
     }
 }

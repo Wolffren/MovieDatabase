@@ -1,5 +1,6 @@
 ﻿namespace MovieDatabase.Web
 {
+    using AutoMapper;
     using Data;
     using Entities;
     using Microsoft.AspNetCore.Builder;
@@ -36,7 +37,9 @@
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<IAdminService, AdminService>();
 
+            services.AddAutoMapper();
             services.AddMvc();
         }
 

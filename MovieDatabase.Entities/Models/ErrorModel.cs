@@ -1,4 +1,4 @@
-namespace MovieDatabase.Services.Models
+namespace MovieDatabase.Entities.Models
 {
     public class ErrorModel
     {
