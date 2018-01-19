@@ -23,8 +23,11 @@
             this._mapper = mapper;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewBag.UsersCount = await this._service.GetUsersCountAsync();
+            ViewBag.MoviesCount = await this._service.GetMoviesCountAsync();
+            ViewBag.ActorsCount = await this._service.GetActorsCountAsync();
             return View();
         }
 

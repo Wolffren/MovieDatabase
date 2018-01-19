@@ -1,21 +1,26 @@
-﻿
-
+﻿<div class="row" id="header">
+    <img src="/images/adminIcon.png" class="img-responsive col-md-1"/>
+    <h1 class="col-md-2">Dashboard</h1>
+    
+</div>
+<hr />
 <div class="row">
-    <div class="col-md-3 col-md-offset-1 tile">
+    
+    <div class="col-md-2 col-md-offset-1 tile blue-tile">
         <a asp-area="Admin" asp-controller="Home" asp-action="Users">
-            <img src="/images/userIcon.png" alt="Users" class="img-responsive" />
+            <img src="/images/userIcon.png" alt="Users" class="img-responsive"/>
             <h2 class="text-center">Users</h2>
         </a>
     </div>
-    <div class="col-md-3 col-md-offset-1 tile">
-        <a  asp-area="Admin" asp-controller="Home" asp-action="Movies">
-            <img src="/images/movieIcon.png" alt="Movies" class="img-responsive" />
+    <div class="col-md-2 col-md-offset-2 tile orange-tile">
+        <a asp-area="Admin" asp-controller="Home" asp-action="Movies">
+            <img src="/images/movieIcon.png" alt="Movies" class="img-responsive"/>
             <h2 class="text-center">Movies</h2>
         </a>
     </div>
-    <div class="col-md-3 col-md-offset-1 tile">
+    <div class="col-md-2 col-md-offset-2 tile green-tile">
         <a asp-area="Admin" asp-controller="Home" asp-action="Actors">
-            <img src="/images/actorIcon.png" alt="Actors" class="img-responsive" />
+            <img src="/images/actorIcon.png" alt="Actors" class="img-responsive"/>
             <h2 class="text-center">Actors</h2>
         </a>
     </div>

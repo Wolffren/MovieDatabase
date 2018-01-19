@@ -43,6 +43,45 @@
     border-width: 2px;
     border-style: solid;
     border-radius: 6px;
-    margin-top: 20%;
+    margin-top: 10%;
+    transition: all .2s ease-in-out;
+}
+.tile:hover {
+        transform: scale(1.1);
     
 }
+.tile > a:hover,a:visited,a:active,a:link {
+        text-decoration: none;
+}
+.tile > a {
+    color: white;
+}
+
+.green-tile {
+    background: #82d64f
+}
+.green-tile:hover {
+    border: #74c145
+
+}
+.blue-tile {
+    background: #02a1f3
+}
+.blue-tile:hover {
+        border: #0090db
+    }
+.orange-tile {
+    background: #f49f38
+}
+    .orange-tile:hover {
+        border: #cc842c
+}
+
+#header > img {
+    width: 100px;
+}
+#header > h1 {
+    font-weight: 600;
+}
+
+

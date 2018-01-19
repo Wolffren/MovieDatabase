@@ -34,5 +34,20 @@
         {
             return await this._context.Actors.ToListAsync();
         }
+
+        public async Task<int> GetUsersCountAsync()
+        {
+            return await this._userManager.Users.CountAsync();
+        }
+
+        public async Task<int> GetMoviesCountAsync()
+        {
+            return await this._context.Movies.CountAsync();
+        }
+
+        public async Task<int> GetActorsCountAsync()
+        {
+            return await this._context.Actors.CountAsync();
+        }
     }
 }
